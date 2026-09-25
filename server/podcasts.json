@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pod_1789721383058",
+    "title": "Test",
+    "youtubeUrl": "https://www.tiktok.com/@_tram.lanh_/video/7675584576911183125",
+    "videoId": "7675584576911183125",
+    "platform": "tiktok",
+    "duration": "5 phút",
+    "healingMessage": "Video chữa lành được chia sẻ bởi tác giả @Ban Mai trên TikTok.",
+    "isActiveDaily": true,
+    "author": "bảo trân cute",
+    "createdAt": "2026-09-18T08:49:43.058Z"
+  },
+  {
+    "id": "pod_1789720636271",
+    "title": "\"What would life be if we had no courage to attempt anything?\" - Vincent van Gogh",
+    "youtubeUrl": "https://www.tiktok.com/@_tram.lanh_/video/7675608541159312660?is_from_webapp=1&sender_device=pc&web_id=7640734654974150151",
+    "videoId": "7675608541159312660",
+    "platform": "tiktok",
+    "duration": "5 phút",
+    "healingMessage": "Video chữa lành được chia sẻ bởi tác giả @Ban Mai trên TikTok.",
+    "isActiveDaily": false,
+    "author": "bảo trân cute",
+    "createdAt": "2026-09-18T08:37:16.271Z"
+  }
+]

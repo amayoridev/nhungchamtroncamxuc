@@ -1,0 +1,6 @@
+{
+  "name": "Những Chấm Tròn Cảm Xúc",
+  "description": "Không gian an toàn chăm sóc sức khỏe tinh thần dành cho thanh thiếu niên và người trẻ Việt Nam.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

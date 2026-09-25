@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* 4-Color Pastel Palette from User Request */
+  --color-bg-minimal: #FFFDF5;        /* Soft Cream Warm Canvas (#FFFDF5) */
+  --color-text-minimal: #2D3142;      /* Deep Slate Charcoal Text for WCAG AA Contrast */
+  --color-muted-minimal: #5C627A;     /* Muted Slate Text */
+  
+  --color-pink-vibrant: #FFB6BD;      /* Color 1: #FFB6BD Vibrant Pastel Pink (Button Hover & Main CTAs) */
+  --color-pink-soft: #FFD7D5;         /* Color 2: #FFD7D5 Soft Peach Pink (Journal Cards & Badges) */
+  --color-yellow-soft: #FFEEB6;       /* Color 3: #FFEEB6 Soft Cream Yellow (Quotes, Streaks & Gardens) */
+  --color-blue-soft: #AFDCF1;         /* Color 4: #AFDCF1 Soft Powder Sky Blue (Nav, Charts & Audio) */
+
+  --color-primary-minimal: #AFDCF1;
+  --color-primary-dark: #1E3A5F;
+  --color-secondary-minimal: #FFD7D5;
+  --color-secondary-dark: #5A1A24;
+  --color-accent-minimal: #FFEEB6;
+  --color-accent-dark: #4D3E00;
+}
+
+/* Base resets & custom minimalist styles */
+body {
+  background-color: var(--color-bg-minimal);
+  color: var(--color-text-minimal);
+  font-family: var(--font-sans);
+}
+
+/* Universal Button Hover rule as specified: "Khi rê chuột đến các nút sẽ đổi thành màu hồng trog tone mình gửi" */
+button {
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #FFB6BD !important;
+  color: #4A121A !important;
+  border-color: #F89CA7 !important;
+}
+
+/* Glassmorphism custom classes compatible with Palette theme */
+.minimal-glass {
+  background: rgba(255, 253, 245, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(175, 220, 241, 0.4);
+}
+
+.minimal-shadow {
+  box-shadow: 0 4px 24px rgba(45, 49, 66, 0.06);
+}
+
+.card-minimal {
+  background-color: #ffffff;
+  border: 1px solid rgba(175, 220, 241, 0.5);
+  border-radius: 24px;
+}
+
+/* Dynamic Theme Keyframe Animations (Slow & Ambient) */
+
+/* 1. Sakura Petals Falling & Swaying */
+@keyframes sakuraFall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(50vh) translateX(35px) rotate(180deg);
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh) translateX(-25px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* 2. Green Leaves Falling & Spinning */
+@keyframes leafFall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg) scale(0.9);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  60% {
+    transform: translateY(60vh) translateX(-40px) rotate(-210deg) scale(1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(110vh) translateX(30px) rotate(-420deg) scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* 3. Golden Bokeh & Sparkle Pulse */
+@keyframes goldBokeh {
+  0%, 100% {
+    transform: translateY(0) scale(0.85);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+/* 4. Twinkling Stars */
+@keyframes starTwinkle {
+  0%, 100% {
+    transform: scale(0.8) rotate(0deg);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.25) rotate(45deg);
+    opacity: 0.95;
+  }
+}
+
+/* 5. Ocean Pastel Bubbles Rising & Wobbling */
+@keyframes oceanBubbleRise {
+  0% {
+    transform: translateY(105vh) translateX(0) scale(0.65);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  30% {
+    transform: translateY(75vh) translateX(25px) scale(0.95);
+  }
+  60% {
+    transform: translateY(45vh) translateX(-20px) scale(1.05);
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  98% {
+    transform: translateY(2vh) translateX(15px) scale(1.15);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-5vh) translateX(18px) scale(1.25);
+    opacity: 0;
+  }
+}
+
+/* 6. Cute Fish Swimming Left to Right (Head points RIGHT) */
+@keyframes fishSwimLTR {
+  0% {
+    transform: translateX(-15vw) translateY(0) scaleX(-1) rotate(2deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.95;
+  }
+  25% {
+    transform: translateX(20vw) translateY(-18px) scaleX(-1) rotate(-3deg);
+  }
+  50% {
+    transform: translateX(50vw) translateY(12px) scaleX(-1) rotate(3deg);
+  }
+  75% {
+    transform: translateX(75vw) translateY(-14px) scaleX(-1) rotate(-2deg);
+  }
+  95% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(115vw) translateY(0) scaleX(-1) rotate(2deg);
+    opacity: 0;
+  }
+}
+
+/* 7. Cute Fish Swimming Right to Left (Head points LEFT) */
+@keyframes fishSwimRTL {
+  0% {
+    transform: translateX(115vw) translateY(0) scaleX(1) rotate(-2deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.95;
+  }
+  30% {
+    transform: translateX(80vw) translateY(-15px) scaleX(1) rotate(3deg);
+  }
+  60% {
+    transform: translateX(45vw) translateY(16px) scaleX(1) rotate(-3deg);
+  }
+  85% {
+    transform: translateX(15vw) translateY(-10px) scaleX(1) rotate(2deg);
+  }
+  95% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(-15vw) translateY(0) scaleX(1) rotate(-2deg);
+    opacity: 0;
+  }
+}
+
+/* Subtle Fish Tail Waggle */
+@keyframes tailWag {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+}
+
+/* Fish Mouth Bubble Float */
+@keyframes fishBubbleFloat {
+  0% {
+    transform: scale(0.3) translate(0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+    transform: scale(0.8) translate(8px, -15px);
+  }
+  80% {
+    opacity: 0.7;
+    transform: scale(1.1) translate(15px, -60px);
+  }
+  100% {
+    transform: scale(1.3) translate(22px, -90px);
+    opacity: 0;
+  }
+}
+
+.animate-sakura {
+  animation: sakuraFall var(--duration, 18s) infinite linear;
+}
+
+.animate-leaf {
+  animation: leafFall var(--duration, 20s) infinite linear;
+}
+
+.animate-gold {
+  animation: goldBokeh var(--duration, 14s) infinite ease-in-out;
+}
+
+.animate-star {
+  animation: starTwinkle var(--duration, 12s) infinite ease-in-out;
+}
+
+.animate-bubble {
+  animation: oceanBubbleRise var(--duration, 18s) infinite ease-in-out;
+}
+
+.animate-fish-ltr {
+  animation: fishSwimLTR var(--duration, 24s) infinite ease-in-out;
+}
+
+.animate-fish-rtl {
+  animation: fishSwimRTL var(--duration, 28s) infinite ease-in-out;
+}
+
+.animate-tail-wag {
+  animation: tailWag 1.2s infinite ease-in-out;
+}
+
+.animate-fish-bubble {
+  animation: fishBubbleFloat 3.5s infinite ease-out;
+}
+
+
+
